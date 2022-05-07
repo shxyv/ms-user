@@ -1,0 +1,21 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/user_db
+    username: postgres
+    password: postgres
+  jpa:
+      database: POSTGRESQL
+      show-sql: true
+      hibernate:
+        ddl-auto: none
+  liquibase:
+      change-log: classpath:liquibase/changelog-master.yml
+
+
+client:
+  subscription:
+    url: http://localhost:8081/api/v1/subscriptions
+
+server:
+  port: 8080

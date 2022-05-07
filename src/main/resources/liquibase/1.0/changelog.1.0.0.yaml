@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: Created users table
+      author: Ilgar Shikhiyev
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: full_name
+                  type: varchar(128)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(128)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: phone_number
+                  type: varchar(64)
+              - column:
+                  name: password
+                  type: varchar(64)
+              - column:
+                  name: api_key
+                  type: varchar(128)
+              - column:
+                  name: topic_type
+                  type: varchar(32)
+              - column:
+                  name: age
+                  type: int
+
